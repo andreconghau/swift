@@ -84,3 +84,53 @@ print(cal1.🐽)
 
 var 🐤 = "con ga"
 print(🐤)
+
+
+// Func nested
+func getFullName() -> Int {
+    var count = 1
+    func convertName() {
+        count += 1
+    }
+    convertName()
+    return count
+}
+
+getFullName()
+
+
+// Func return func
+func makeIncrement() ->((Int) -> Int) {
+    func addOne(num: Int) -> Int {
+        return 1 + num
+    }
+    return addOne
+}
+
+var testIncre = makeIncrement();
+testIncre(7)
+
+// Func as paramter
+
+func checkWithCondiction(list: [Int], condiction: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condiction(item) {
+            print(item)
+            return true
+        }
+    }
+    return false
+}
+
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+
+func getterThanTen(number: Int) -> Bool {
+    return number > 10
+}
+
+var numbers = [1,2,3,11,12,13];
+
+var isLess = checkWithCondiction(list: numbers, condiction: lessThanTen)
+var isGetter = checkWithCondiction(list: numbers, condiction: getterThanTen)
