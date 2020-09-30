@@ -142,5 +142,83 @@ var mapInt = numbers.map({ (num: Int) -> Int in
     return result
 })
 
+// Dictionary
+var dictionaryList:[String:String] = ["name":"andre", "email":"andre@gmail.com"]
+var dictionaryList2:[Int:String] = [1:"one", 2:"two", 3:"three"]
+
+dictionaryList["name"]
+dictionaryList2[2]
+let oldEmail = dictionaryList2.updateValue("so ba", forKey: 3)
+dictionaryList2[3]
 
 
+// Struct
+
+struct Shape {
+    var width:Float = 0.0
+    var height = 0.0
+}
+
+var aShape = Shape(width: 1.1, height: 2.2)
+print("aShap has w:\(aShape.width) - h:\(aShape.height)")
+var bShape = aShape
+bShape.height = 2.3
+print("bShap has w:\(bShape.width) - h:\(bShape.height)")
+
+
+// Class
+class User {
+    var name = ""
+    var email:String?
+}
+
+var aUser = User()
+var bUser = aUser
+var cUser = User()
+if (aUser === bUser) {
+    print("aUser và bUser cùng trỏ về 1 vùng nhớ")
+}
+
+if (cUser === aUser) {
+    print("cUser và aUser cùng trỏ về 1 vùng nhớ")
+} else {
+    print("cUser và aUser khác vùng nhớ")
+}
+
+
+// Properites
+struct EX {
+    lazy var initWhenCall:String = {
+        print("it will be run when be called")
+        return "called";
+    }()
+    
+    var x:Int
+    var x2Cost:Int {
+        get {
+            print("it is GET")
+            return x * 2
+        }
+        set {
+            print("it is SET with NewValue: \(newValue)")
+            x = newValue / 2
+        }
+    }
+    
+    var demoStep:Int = 0 {
+        willSet(newStep) {
+            print("it is newStep value: \(newStep)")
+        }
+        didSet {
+            print("it is oldValue value: \(oldValue)")
+        }
+    }
+    
+}
+
+var ex1 = EX(x: 10)
+ex1.initWhenCall
+print(ex1.x2Cost)
+ex1.x2Cost = 8
+print(ex1.x)
+ex1.demoStep = 1
