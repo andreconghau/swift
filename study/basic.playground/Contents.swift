@@ -134,3 +134,13 @@ var numbers = [1,2,3,11,12,13];
 
 var isLess = checkWithCondiction(list: numbers, condiction: lessThanTen)
 var isGetter = checkWithCondiction(list: numbers, condiction: getterThanTen)
+
+
+// Closure
+var mapInt = numbers.map({ (num: Int) -> Int in
+    let result = num * 3
+    return result
+})
+
+
+
