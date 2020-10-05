@@ -57,11 +57,16 @@
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSb-PD-ihQ">
+                                <rect key="frame" x="93" y="346" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImage" destination="gSb-PD-ihQ" id="Ld5-61-NbW"/>
                         <outlet property="emailTxt" destination="jbC-Q7-1C6" id="GUW-ZM-gnC"/>
                         <outlet property="lbl" destination="Z4a-oY-hEP" id="vXf-DS-v8a"/>
                         <outlet property="loginButton" destination="k3C-8o-bXQ" id="lgp-wa-e96"/>
