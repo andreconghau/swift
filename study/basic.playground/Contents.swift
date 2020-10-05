@@ -214,6 +214,9 @@ struct EX {
         }
     }
     
+    // Static
+    static var staticVar1: String = "I am Static"
+    
 }
 
 var ex1 = EX(x: 10)
@@ -222,3 +225,211 @@ print(ex1.x2Cost)
 ex1.x2Cost = 8
 print(ex1.x)
 ex1.demoStep = 1
+EX.staticVar1
+
+
+// Enum Sefl valeu
+
+enum Comppass {
+    case dong, tay, nam, bac
+    mutating func moveToNext() {
+        switch self {
+        case .dong:
+            self = .tay
+        case .tay:
+            self = .nam
+        case .nam:
+            self = .bac
+        case .bac:
+            self = .dong
+        }
+    }
+}
+ 
+var compass1 = Comppass.dong
+compass1.moveToNext()
+compass1.moveToNext()
+compass1.moveToNext()
+compass1.moveToNext()
+
+// static methods and staic property
+class VX {
+    static let pi:Float = 3.14
+    
+    class func cricleArea(radius: Float) -> Float {
+        return pi * radius * radius
+    }
+}
+
+var cicleArea1:Float = VX.cricleArea(radius: 1.5)
+
+
+// Subscript
+
+struct OV {
+    var initNum:Int = 2
+    subscript(num: Int) -> Int {
+        set {
+            print(newValue)
+            
+        }
+        get {
+            return initNum * num
+        }
+    }
+}
+
+var ov1 = OV()
+ov1[1]
+ov1[5]
+ov1[0] = 10
+
+// Class init
+
+class ET {
+    var name: String
+    init(newName: String) {
+        name = newName
+        print("Init Claass ET")
+    }
+}
+
+
+var et1 = ET(newName: "Andre")
+et1.name;
+
+
+// Class override method
+class parentEX {
+    var name:String = "Parent"
+    
+    func printName() {
+        print("parent Method")
+    }
+    func printAge() {
+        print("parent Age Method")
+    }
+    
+    var phone:String {
+        return "013123123123"
+    }
+}
+
+class chilEx: parentEX {
+    override func printName() {
+        print("child overrding Method")
+    }
+    
+    var childName: String {
+        return "Child from \(super.name)"
+    }
+    
+    override var phone: String {
+        return "child phone: \(super.phone)"
+    }
+    
+    init(text: String) {
+        
+    }
+    
+    convenience override init() {
+        self.init(text: "abc")
+        
+    }
+}
+
+var child1 = chilEx(text:"check convinence init" )
+child1.printName()
+child1.printAge()
+child1.self.name
+child1.childName
+child1.phone
+
+
+// deinit
+
+class GamePlay {
+    var score:Int = 0
+    init(point: Int = 0) {
+        score += point
+    }
+    deinit {
+        score = 0
+        print("Destroy Called")
+    }
+}
+
+var gamer1: GamePlay? = GamePlay(point: 10)
+gamer1!.score
+gamer1 = nil
+
+// Ep kieu => Down Casting vs Type Casting
+var thing = [Any]() // may be array or object
+thing.append(10)
+thing.append(99.9)
+thing.append("Type Casting")
+thing.append((1.0, 2.0)) // type tuple
+thing.append(child1)
+thing.append({(name: String) -> String in "Hello \(name)"})
+
+for item in thing {
+    switch item {
+    case let anInt as Int:
+        print("It is An Int \(anInt)")
+    case let anDouble as Double where anDouble > 0:
+        print("It is An Double \(anDouble) and Positive")
+    case let anString as String:
+        print("It is An String \(anString)")
+    case let (x,y) as (Double, Double):
+        print("It is An Tuple dxd \((x,y))")
+    case let stringClosure as (String) -> String:
+        print("It is An Closure \(stringClosure("closure String ne"))")
+    default:
+        print("something else")
+    }
+}
+
+
+// Extension
+extension Double {
+    var meter: Double {
+        return self
+    }
+    var kilometer: Double {
+        return self*1000
+    }
+    var centimet: Double {
+        return self / 100
+    }
+}
+
+let aViTri = 1.5.kilometer + 20.0.meter - 500.0.centimet
+
+protocol Detail {
+    var nickName: String { get }
+    
+    func showNickName() -> String
+}
+
+
+struct hinhVuong: Detail {
+    var nickName: String {
+        return "Nick name is here"
+    }
+    
+    func showNickName() -> String {
+        return "ke thua protocal"
+    }
+    
+    var height, width: Int
+}
+
+extension hinhVuong {
+    func dientich() -> Int {
+        return self.height * self.width
+    }
+}
+
+var hv1 = hinhVuong(height: 10, width: 5)
+var dthv1 = hv1.dientich()
+hv1.showNickName()
