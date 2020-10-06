@@ -63,7 +63,6 @@ class ViewController: UIViewController {
         homeSence.emailParam = emailInput ?? "Chua nhap gi het"
         self.navigationController?.pushViewController(homeSence, animated: true)
         
-        // Navigation PUSH or POP
         
         
     }
