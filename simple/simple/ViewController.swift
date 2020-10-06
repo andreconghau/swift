@@ -15,17 +15,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var emailTxt: UITextField!
     
-    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var singupImage: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("ViewController Load")
+        print("Step1")
         self.lbl.text = "Home Loading"
         
         // Re-render button
-        self.loginButton.backgroundColor = .clear
+        // self.loginButton.backgroundColor = .clear
         self.loginButton.layer.cornerRadius = 5
         self.loginButton.layer.borderWidth = 1
         
@@ -33,11 +33,39 @@ class ViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("Step2")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("Step3")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Step4")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("Step5")
+    }
+    
     // Login Action
     @IBAction func loginAction(_ sender: Any) {
         print("Click to Login button")
         self.lbl.text = "Clicked in Login"
-        self.avatarImage.image = UIImage(named: "img1.jpg")
+        
+        
+        let emailInput = self.emailTxt.text
+        print(emailInput ?? "")
+        
+        // StoryBoard.
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Tao ViewController Sence
+        let homeSence = mainSB.instantiateViewController(identifier: "HomeView") as! HomeViewController
+        homeSence.emailParam = emailInput ?? "Chua nhap gi het"
+        self.navigationController?.pushViewController(homeSence, animated: true)
+        
+        // Navigation PUSH or POP
+        
+        
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -54,7 +82,7 @@ class ViewController: UIViewController {
         do {
             let imgData = try Data(contentsOf: imgUrl!)
             // Render
-            avatarImage.image = UIImage(data: imgData)
+            singupImage.image = UIImage(data: imgData)
         } catch {
             print("Can not load Image")
         }
