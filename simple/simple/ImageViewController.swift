@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UITableViewDataSource {
+class ImageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var userData:[User] = [
         User(name: "@bill", avatar: "https://scontent.fsgn5-7.fna.fbcdn.net/v/t1.0-9/42141776_10212444418576743_5716158221761118208_o.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=2vCzBbKsva0AX9IUCf2&_nc_ht=scontent.fsgn5-7.fna&oh=0b370a7db733515f0fcc7c143aa49d86&oe=5FA17047", follower: 100),
@@ -28,6 +28,7 @@ class ImageViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
 
@@ -52,8 +53,23 @@ class ImageViewController: UIViewController, UITableViewDataSource {
         cell.avatar.boTronHinh()
      
         cell.name.text = userData[indexPath.row].name
-        cell.follower.text = "120 follower"
+        cell.follower.text = "follower: " + String(userData[indexPath.row].follower)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userInfo:User = userData[indexPath.row]
+        // print(indexPath.row)
+        // StoryBoard.
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Tao ViewController Sence
+        let userProfileSence = mainSB.instantiateViewController(identifier: "UserProfileView") as! UserProfileViewController
+        userProfileSence.userInfo = userInfo
+        self.navigationController?.pushViewController(userProfileSence, animated: true)
+        
     }
 
 }

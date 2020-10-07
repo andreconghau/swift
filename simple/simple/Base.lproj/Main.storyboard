@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="124.55357142857142"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Member List-->
         <scene sceneID="cJu-1r-Fkd">
             <objects>
-                <viewController storyboardIdentifier="ImagesListView" id="2yt-Em-3qK" customClass="ImageViewController" customModule="simple" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesListView" title="Member List" id="2yt-Em-3qK" customClass="ImageViewController" customModule="simple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UhA-ac-elu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="follower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="P9S-YA-2BP">
-                                                    <rect key="frame" x="84" y="30.5" width="41.5" height="13.5"/>
+                                                    <rect key="frame" x="84" y="30.5" width="210" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                                                 <constraint firstItem="P9S-YA-2BP" firstAttribute="top" secondItem="ZZW-Ul-0ax" secondAttribute="bottom" id="EC9-If-k3N"/>
                                                 <constraint firstItem="ZZW-Ul-0ax" firstAttribute="leading" secondItem="Wmh-fY-Ui2" secondAttribute="trailing" constant="10" id="GQC-EV-LS4"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="P9S-YA-2BP" secondAttribute="bottom" constant="25" id="bXN-id-w2Y"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="P9S-YA-2BP" secondAttribute="trailing" constant="268.5" id="chJ-2A-oDX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="P9S-YA-2BP" secondAttribute="trailing" constant="100" id="chJ-2A-oDX"/>
                                                 <constraint firstItem="P9S-YA-2BP" firstAttribute="leading" secondItem="Wmh-fY-Ui2" secondAttribute="trailing" constant="10" id="mWd-oc-PQ5"/>
                                                 <constraint firstItem="ZZW-Ul-0ax" firstAttribute="top" secondItem="eFb-gN-5wY" secondAttribute="top" constant="10" id="ucq-3F-GJQ"/>
                                             </constraints>
@@ -163,6 +163,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OU-wr-Lxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="778.79464285714278"/>
+        </scene>
+        <!--User Profle-->
+        <scene sceneID="Rcg-ko-DP7">
+            <objects>
+                <viewController storyboardIdentifier="UserProfileView" title="User Profle" modalTransitionStyle="flipHorizontal" id="kl1-JE-S6h" customClass="UserProfileViewController" customModule="simple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="s3h-wT-aWp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Edj-xg-9Y1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sIP-PJ-7kn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Edj-xg-9Y1" firstAttribute="top" secondItem="sIP-PJ-7kn" secondAttribute="top" id="0mO-FL-ihB"/>
+                            <constraint firstItem="Edj-xg-9Y1" firstAttribute="height" secondItem="s3h-wT-aWp" secondAttribute="height" id="IEo-qC-RG7"/>
+                            <constraint firstItem="sIP-PJ-7kn" firstAttribute="trailing" secondItem="Edj-xg-9Y1" secondAttribute="trailing" id="WUF-KI-SA9"/>
+                            <constraint firstItem="Edj-xg-9Y1" firstAttribute="leading" secondItem="sIP-PJ-7kn" secondAttribute="leading" id="z6R-tz-GxJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageProfile" destination="Edj-xg-9Y1" id="9lo-JS-V4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhP-5W-HSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="779"/>
         </scene>
         <!--Home View-->
         <scene sceneID="ZAG-bS-LKx">
