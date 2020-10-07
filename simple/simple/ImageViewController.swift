@@ -26,8 +26,11 @@ class ImageViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! ListMemberTableViewCell
-        cell.avatar.layer.cornerRadius = 30
+
         cell.avatar.image = UIImage(named: "img1.jpg")
+        cell.avatar.layer.cornerRadius = cell.avatar.frame.size.width / 2
+        cell.avatar.clipsToBounds = true
+     
         cell.name.text = "andreconghau"
         cell.follower.text = "120 follower"
         return cell
