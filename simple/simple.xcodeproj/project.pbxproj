@@ -34,6 +34,7 @@
 		651A3A00252D6FD700A6A275 /* andre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = andre.jpg; sourceTree = "<group>"; };
 		651A3A03252D70D900A6A275 /* non-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-avatar.png"; sourceTree = "<group>"; };
 		651A3A07252D76B200A6A275 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		651A3A0E252D988C00A6A275 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		65BF78C4252ADB62000CAFB6 /* simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BF78C7252ADB62000CAFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65BF78C9252ADB62000CAFB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +82,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		651A3A0A252D96AB00A6A275 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				651A3A0E252D988C00A6A275 /* MyPlayground.playground */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		65BF78BB252ADB62000CAFB6 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +109,7 @@
 		65BF78C6252ADB62000CAFB6 /* simple */ = {
 			isa = PBXGroup;
 			children = (
+				651A3A0A252D96AB00A6A275 /* common */,
 				651A39FB252D6BE900A6A275 /* models */,
 				651A39F7252D692000A6A275 /* extentions */,
 				651A39EF252C71B000A6A275 /* views */,

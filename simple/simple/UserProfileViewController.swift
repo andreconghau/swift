@@ -20,18 +20,26 @@ class UserProfileViewController: UIViewController {
         self.title?.append(" " + self.userInfo.name)
         
         let imgUrl = URL(string: self.userInfo.avatar)
-        
-        // DATA
-        do {
-            let imgData = try Data(contentsOf: imgUrl!)
-            // Render
+        let queueLoadImg = DispatchQueue(label: "load_img")
+        self.imageProfile.image = UIImage(named: "non-avatar.png")
+        queueLoadImg.async {
+            // DATA
+            do {
+                let imgData = try Data(contentsOf: imgUrl!)
+                // Render
 
-            //self.view.backgroundColor = UIColor(patternImage: UIImage(data: imgData)!)
-            self.imageProfile.image = UIImage(data: imgData)
-        } catch {
-            // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "non-avatar.png")!)
-            self.imageProfile.image = UIImage(named: "non-avatar.png")
+                //self.view.backgroundColor = UIColor(patternImage: UIImage(data: imgData)!)
+                DispatchQueue.main.async {
+                    self.imageProfile.image = UIImage(data: imgData)
+                }
+                
+            } catch {
+                // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "non-avatar.png")!)
+                // self.imageProfile.image = UIImage(named: "non-avatar.png")
+            }
         }
+        
+
         
         
         // Do any additional setup after loading the view.

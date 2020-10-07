@@ -40,17 +40,23 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as! ListMemberTableViewCell
         
         let imgUrl = URL(string: userData[indexPath.row].avatar)
-        
-        // DATA
-        do {
-            let imgData = try Data(contentsOf: imgUrl!)
-            // Render
-            cell.avatar.image = UIImage(data: imgData)
-        } catch {
-            cell.avatar.image = UIImage(named: "non-avatar.png")
+        let queueLoadImg = DispatchQueue(label: "load_img")
+        cell.avatar.image = UIImage(named: "non-avatar.png")
+        queueLoadImg.async {
+            // DATA
+            do {
+                    let imgData = try Data(contentsOf: imgUrl!)
+                    // Render
+                DispatchQueue.main.async {
+                    cell.avatar.image = UIImage(data: imgData)
+                }
+       
+            } catch {
+                // cell.avatar.image = UIImage(named: "non-avatar.png")
+            }
+            cell.avatar.boTronHinh()
         }
 
-        cell.avatar.boTronHinh()
      
         cell.name.text = userData[indexPath.row].name
         cell.follower.text = "follower: " + String(userData[indexPath.row].follower)
