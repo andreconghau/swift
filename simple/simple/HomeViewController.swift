@@ -9,10 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
+
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     
-
+    
     var emailParam:String!
     
     
@@ -60,7 +62,5 @@ class HomeViewController: UIViewController {
         
         
     }
-    
-    
     
 }

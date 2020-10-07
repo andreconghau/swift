@@ -89,6 +89,14 @@ class ViewController: UIViewController {
   
     }
     
-
+    @IBAction func imagesListAction(_ sender: Any) {
+        // StoryBoard.
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Tao ViewController Sence
+        let imagesListSence = mainSB.instantiateViewController(identifier: "ImagesListView") as! ImageViewController
+        self.navigationController?.pushViewController(imagesListSence, animated: true)
+    }
+    
 }
 
