@@ -54,9 +54,9 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
             } catch {
                 // cell.avatar.image = UIImage(named: "non-avatar.png")
             }
-            cell.avatar.boTronHinh()
+            
         }
-
+        cell.avatar.boTronHinh()
      
         cell.name.text = userData[indexPath.row].name
         cell.follower.text = "follower: " + String(userData[indexPath.row].follower)

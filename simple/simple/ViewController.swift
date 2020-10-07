@@ -98,5 +98,13 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(imagesListSence, animated: true)
     }
     
+    @IBAction func webViewAction(_ sender: Any) {
+        // StoryBoard.
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Tao ViewController Sence
+        let webViewSence = mainSB.instantiateViewController(identifier: "WebViewView") as! WebViewViewController
+        self.navigationController?.pushViewController(webViewSence, animated: true)
+    }
 }
 
