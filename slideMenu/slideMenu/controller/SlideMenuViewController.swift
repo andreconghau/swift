@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SlideMenuViewController.swift
 //  slideMenu
 //
 //  Created by andre on 10/8/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SlideMenuViewController: UITableViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
     /*
     // MARK: - Navigation
 
