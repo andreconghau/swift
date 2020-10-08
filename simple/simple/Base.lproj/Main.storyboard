@@ -87,11 +87,25 @@
                                     <action selector="webViewAction:" destination="BYZ-38-t0r" eventType="touchDown" id="zop-Z2-Ncw"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODi-fc-rJF">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="tJg-tf-UHj"/>
+                                    <tabBarItem systemItem="history" id="jva-5F-OZ0">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem systemItem="more" id="1Q2-jF-avG"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="51v-RT-x6T"/>
+                    <navigationItem key="navigationItem" id="51v-RT-x6T">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="avatarImage" destination="gSb-PD-ihQ" id="Ld5-61-NbW"/>
                         <outlet property="emailTxt" destination="jbC-Q7-1C6" id="GUW-ZM-gnC"/>

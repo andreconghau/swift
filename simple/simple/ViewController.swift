@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     
     @IBOutlet weak var singupImage: UIImageView!
+    
+
     
     
     override func viewDidLoad() {
@@ -106,5 +109,11 @@ class ViewController: UIViewController {
         let webViewSence = mainSB.instantiateViewController(identifier: "WebViewView") as! WebViewViewController
         self.navigationController?.pushViewController(webViewSence, animated: true)
     }
+    
+    @IBAction func showMenu(_ sender: Any) {
+        let menu = storyboard!.instantiateViewController(withIdentifier: "HomeView") as! SideMenuNavigationController
+        present(menu, animated: true, completion: nil)
+    }
+    
 }
 
