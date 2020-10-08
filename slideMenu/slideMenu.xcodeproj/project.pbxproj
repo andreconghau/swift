@@ -15,6 +15,7 @@
 		657A85D6252ED0C2001C4EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A85D5252ED0C2001C4EFD /* Assets.xcassets */; };
 		657A85D9252ED0C2001C4EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657A85D7252ED0C2001C4EFD /* LaunchScreen.storyboard */; };
 		657A85E7252ED301001C4EFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A85E6252ED301001C4EFD /* HomeViewController.swift */; };
+		657A85EF252F060C001C4EFD /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A85EE252F060C001C4EFD /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		657A85D8252ED0C2001C4EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		657A85DA252ED0C2001C4EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657A85E6252ED301001C4EFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		657A85EE252F060C001C4EFD /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		A02001AB39EA50A4B07007D6 /* Pods-slideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slideMenu.release.xcconfig"; path = "Target Support Files/Pods-slideMenu/Pods-slideMenu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,9 +90,18 @@
 		657A85E5252ED2EE001C4EFD /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				657A85ED252F05DA001C4EFD /* table */,
 				657A85E6252ED301001C4EFD /* HomeViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		657A85ED252F05DA001C4EFD /* table */ = {
+			isa = PBXGroup;
+			children = (
+				657A85EE252F060C001C4EFD /* MenuController.swift */,
+			);
+			path = table;
 			sourceTree = "<group>";
 		};
 		B8A012A530B7CCDA194F7D74 /* Pods */ = {
@@ -216,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657A85EF252F060C001C4EFD /* MenuController.swift in Sources */,
 				657A85D1252ED0C0001C4EFD /* ViewController.swift in Sources */,
 				657A85CD252ED0C0001C4EFD /* AppDelegate.swift in Sources */,
 				657A85CF252ED0C0001C4EFD /* SceneDelegate.swift in Sources */,

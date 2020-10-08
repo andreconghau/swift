@@ -35,7 +35,7 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="gdi-Ea-5aY">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="nt1-MD-Ljc">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="done" id="nt1-MD-Ljc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bkE-ya-WwI">
                                 <rect key="frame" x="20" y="11" width="75" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,7 +62,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
                             <real key="value" value="0.69999999999999996"/>
                         </userDefinedRuntimeAttribute>
