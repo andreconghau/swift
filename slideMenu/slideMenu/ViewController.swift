@@ -12,6 +12,8 @@ class ViewController: UIViewController  {
     
     
     let sideMenu = SideMenuNavigationController(rootViewController: MenuController(with: ["Green", "Orange", "Blue", "Red"]))
+    // let sideMenu = SideMenuNavigationController(rootViewController: MenuTableViewController())
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
