@@ -93,13 +93,43 @@ class ViewController: UIViewController  {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
 
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            print(String(data: data, encoding: .utf8)!)
-        }
+            guard let data = data, error == nil else {
+                print("Something wrong \(error!.localizedDescription)")
+                return
+            }
+            // print(String(data: data, encoding: .utf8)!)
 
+            do {
+                let result = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
+                // print(result!)
+                for item in result! {
+                    // print(item)
+                    print("ID: \(item["id"]) - Title: \(item["title"])")
+                    if let names = item["body"] as? [String] {
+                                // print(names)
+                            }
+                }
+                
+            } catch {
+                print("faild to convert: \(error.localizedDescription)")
+            }
+
+            
+        }
         task.resume()
     }
     
 }
 
+struct Response: Codable {
+    let results: Myresult
+    let status: String
+}
+
+struct Myresult: Codable {
+    let userId: Int
+    let id: Int
+    let title: String
+    let body: String
+}
 
