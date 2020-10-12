@@ -25,7 +25,9 @@ class ViewController: UIViewController  {
         
 
 
-        demoGetMethod()
+        // demoGetMethod()
+        
+        demoDecodableSingle()
         
         
     }
@@ -119,17 +121,75 @@ class ViewController: UIViewController  {
         task.resume()
     }
     
+    func demoDecodableSingle () {
+        // Simple API: https://api.letsbuildthatapp.com/jsondecodable/course
+        let json_url_string = "https://api.letsbuildthatapp.com/jsondecodable/course"
+        guard let url = URL(string: json_url_string) else {
+            return
+        }
+        
+        // Step1: build sample struct
+        // let my_course = Course(id: 1, name: "My course", link: "some link", image_url: "img url")
+        // print(my_course)
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            // check err
+            // check response header is 200
+            
+            print("do something")
+            guard let data = data else { return }
+            // let data_string = String(data: data, encoding: .utf8)
+            
+            // Method 1: dung cach nay co the define lay key Json data return
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+                    return
+                }
+                let course = Course(json: json)
+                
+                print("Method1: id:\(course.id), name:\(course.name)")
+                
+            } catch let jsonErr {
+                print("Some thing wrong at: \(jsonErr.localizedDescription)")
+            }
+             
+            
+            // Method 2: su dung Decoable, tu dong mapping field api
+            do {
+                let course = try JSONDecoder().decode(CourseDecoable.self, from: data)
+                print("Method1: id:\(course.id), name:\(course.name)")
+                
+            } catch let jsonErr {
+                print("Some thing wrong at: \(jsonErr)")
+            }
+            
+        }.resume()
+        
+    }
+    
 }
 
-struct Response: Codable {
-    let results: Myresult
-    let status: String
-}
 
-struct Myresult: Codable {
-    let userId: Int
+// Ten key mapping ko can giong voi key tu api tra ve
+struct Course {
     let id: Int
-    let title: String
-    let body: String
+    let name: String
+    let link: String
+    let image_url: String
+    
+    init(json:[String: Any]) {
+        id = json["id"] as? Int ?? -1
+        name = json["name"] as? String ?? ""
+        link = json["link"] as? String ?? ""
+        image_url = json["image_url"] as? String ?? ""
+    }
+}
+
+// Ten key mapping phai giong voi key tu api tra ve
+struct CourseDecoable: Decodable {
+    let id: Int
+    let name: String
+    let link: String
+    let imageUrl: String
 }
 
