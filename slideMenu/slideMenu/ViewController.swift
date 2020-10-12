@@ -27,8 +27,9 @@ class ViewController: UIViewController  {
 
         // demoGetMethod()
         
-        demoDecodableSingle()
+        // demoDecodableSingle()
         
+        demoApiMultiRecords()
         
     }
 
@@ -166,6 +167,36 @@ class ViewController: UIViewController  {
         }.resume()
         
     }
+    
+    public var result: [CourseDecoable]?
+    
+    func demoApiMultiRecords() {
+        let api_url_string = "https://api.letsbuildthatapp.com/jsondecodable/courses"
+        print("API Endpoint: \(api_url_string)")
+        guard let api_url = URL(string: api_url_string) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: api_url) { (data, response, err) in
+            guard let data = data else { return }
+            //let data_string = String(data: data, encoding: .utf8)
+            // print(data_string)
+            // Method 2: su dung Decoable, tu dong mapping field api
+            do {
+                let courses = try JSONDecoder().decode([CourseDecoable].self, from: data)
+                // print(courses)
+                for item in courses {
+                    print("id: \(item.id) - name:\(item.name)")
+                }
+                
+            } catch let jsonErr {
+                print("Some thing wrong at: \(jsonErr)")
+            }
+            
+        }.resume()
+    }
+    
+    
     
 }
 
