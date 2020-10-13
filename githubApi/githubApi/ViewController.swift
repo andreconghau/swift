@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.tableUsers.dataSource = self
         
         self.alamofireRequestJson { (result, error) in
-            print(result,error)
+            // print(result,error)
 
             self.result = result as? GitHubUser
             self.tableUsers.reloadData()
@@ -30,12 +30,35 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.result?.items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! UserTableViewCell
         cell.name.text = result?.items![indexPath.row].login
+        cell.link.text = result?.items![indexPath.row].html_url
+        cell.follower.text = "Follower: 0"
+        cell.following.text = "Following: 0"
+        
+        let imgUrl = URL(string: (result?.items![indexPath.row].avatar_url)!)
+        let queueLoadImg = DispatchQueue(label: "load_img")
+        cell.avatar.boTronHinh()
+        cell.avatar.image = UIImage(named: "non-avatar")
+        queueLoadImg.async {
+            // DATA
+            do {
+                    let imgData = try Data(contentsOf: imgUrl!)
+                    // Render
+                DispatchQueue.main.async {
+                    cell.avatar.image = UIImage(data: imgData)
+                }
+       
+            } catch {
+                // cell.avatar.image = UIImage(named: "non-avatar.png")
+            }
+            
+        }
+        
         return cell
     }
     

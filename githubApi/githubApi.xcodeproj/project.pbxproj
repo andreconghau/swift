@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57A3B2C02ECFAF3280DE9B55 /* Pods_githubApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C593D937DFAD94C35B063 /* Pods_githubApi.framework */; };
 		6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5B82535895200F9E6F1 /* AppDelegate.swift */; };
 		6587F5BB2535895200F9E6F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */; };
 		6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BC2535895200F9E6F1 /* ViewController.swift */; };
@@ -15,6 +14,8 @@
 		6587F5C22535895400F9E6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6587F5C12535895400F9E6F1 /* Assets.xcassets */; };
 		6587F5C52535895400F9E6F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6587F5C32535895400F9E6F1 /* LaunchScreen.storyboard */; };
 		6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */; };
+		6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C593D937DFAD94C35B063 /* Pods_githubApi.framework */; };
+		6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D92535ACF300F9E6F1 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6587F5C42535895400F9E6F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6587F5C62535895400F9E6F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		6587F5D92535ACF300F9E6F1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		961C593D937DFAD94C35B063 /* Pods_githubApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A578075C81426D0248445919 /* Pods-githubApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.release.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.release.xcconfig"; sourceTree = "<group>"; };
 		E9876E10D118E1726B36C331 /* Pods-githubApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.debug.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A3B2C02ECFAF3280DE9B55 /* Pods_githubApi.framework in Frameworks */,
+				6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 		6587F5B72535895200F9E6F1 /* githubApi */ = {
 			isa = PBXGroup;
 			children = (
+				6587F5D82535ACDE00F9E6F1 /* extension */,
 				6587F5B82535895200F9E6F1 /* AppDelegate.swift */,
 				6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */,
 				6587F5BC2535895200F9E6F1 /* ViewController.swift */,
@@ -84,6 +87,14 @@
 				6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */,
 			);
 			path = githubApi;
+			sourceTree = "<group>";
+		};
+		6587F5D82535ACDE00F9E6F1 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				6587F5D92535ACF300F9E6F1 /* UIImageView.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		9A2A8F41A0B0D4F95889E45C /* Frameworks */ = {
@@ -209,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */,
+				6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */,
 				6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */,
 				6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */,
 				6587F5BB2535895200F9E6F1 /* SceneDelegate.swift in Sources */,
@@ -366,7 +378,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githubApi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githuapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,7 +398,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githubApi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githuapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
