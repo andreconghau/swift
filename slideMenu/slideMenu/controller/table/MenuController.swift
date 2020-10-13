@@ -66,7 +66,7 @@ class MenuController: UITableViewController {
             defaultScreen = "screen-1"
         }
         // Tao ViewController Sence
-        let homeSence = mainSB.instantiateViewController(identifier: defaultScreen) as! HomeViewController
+        let homeSence = mainSB.instantiateViewController(identifier: defaultScreen) as! GreenViewController
         self.navigationController?.pushViewController(homeSence, animated: true)
     }
 

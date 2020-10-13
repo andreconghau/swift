@@ -11,7 +11,7 @@ import SideMenu
 class ViewController: UIViewController  {
     
     
-    let sideMenu = SideMenuNavigationController(rootViewController: MenuController(with: ["Green", "Orange", "Blue", "Red"]))
+    let sideMenu = SideMenuNavigationController(rootViewController: MenuController(with: ["Demo MVVM", "Orange", "Blue", "Red"]))
     // let sideMenu = SideMenuNavigationController(rootViewController: MenuTableViewController())
     
 
@@ -30,6 +30,10 @@ class ViewController: UIViewController  {
         // demoDecodableSingle()
         
         demoApiMultiRecords()
+        
+        demoApiComplexRecords()
+        
+        demoApiMissingField()
         
     }
 
@@ -168,8 +172,6 @@ class ViewController: UIViewController  {
         
     }
     
-    public var result: [CourseDecoable]?
-    
     func demoApiMultiRecords() {
         let api_url_string = "https://api.letsbuildthatapp.com/jsondecodable/courses"
         print("API Endpoint: \(api_url_string)")
@@ -188,6 +190,56 @@ class ViewController: UIViewController  {
                 for item in courses {
                     print("id: \(item.id) - name:\(item.name)")
                 }
+                
+            } catch let jsonErr {
+                print("Some thing wrong at: \(jsonErr)")
+            }
+            
+        }.resume()
+    }
+    
+    func demoApiComplexRecords() {
+        let api_url_string = "https://api.letsbuildthatapp.com/jsondecodable/website_description"
+        print("API Endpoint: \(api_url_string)")
+        guard let api_url = URL(string: api_url_string) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: api_url) { (data, response, err) in
+            guard let data = data else { return }
+            //let data_string = String(data: data, encoding: .utf8)
+            // print(data_string)
+            // Method 2: su dung Decoable, tu dong mapping field api
+            do {
+                let website_ifo = try JSONDecoder().decode(Website.self, from: data)
+                // print(courses)
+
+                print("Website name: \(website_ifo.name)")
+                print("Website description: \(website_ifo.description)")
+                print(website_ifo.courses)
+                
+            } catch let jsonErr {
+                print("Some thing wrong at: \(jsonErr)")
+            }
+            
+        }.resume()
+    }
+    
+    func demoApiMissingField() {
+        let api_url_string = "https://api.letsbuildthatapp.com/jsondecodable/courses_missing_fields"
+        print("API Endpoint: \(api_url_string)")
+        guard let api_url = URL(string: api_url_string) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: api_url) { (data, response, err) in
+            guard let data = data else { return }
+            //let data_string = String(data: data, encoding: .utf8)
+            // print(data_string)
+            // Method 2: su dung Decoable, tu dong mapping field api
+            do {
+                let courses = try JSONDecoder().decode([CourseMisingFied].self, from: data)
+                print(courses)
                 
             } catch let jsonErr {
                 print("Some thing wrong at: \(jsonErr)")
@@ -224,3 +276,16 @@ struct CourseDecoable: Decodable {
     let imageUrl: String
 }
 
+struct Website: Decodable {
+    let name: String
+    let description: String
+    let courses: [CourseDecoable]
+}
+
+// Missing Field Key thì thêm ?
+struct CourseMisingFied: Decodable {
+    let id: Int?
+    let name: String?
+    let link: String?
+    let imageUrl: String?
+}
