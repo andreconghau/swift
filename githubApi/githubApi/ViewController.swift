@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let resource = ImageResource(downloadURL: imgUrl!)
         let placeholder = UIImage(named: "non-avatar")
         let processor = RoundCornerImageProcessor(cornerRadius: 20)
-        
+        cell.avatar.kf.indicatorType = .activity
         cell.avatar.kf.setImage(with: resource, placeholder: placeholder, options: [.processor(processor)], progressBlock: { receivedSize, totalSize in
                                     let percentage = (Float(receivedSize) / Float(totalSize)) * 100.0
                                     print("downloading progress: \(percentage)%")
@@ -178,3 +178,5 @@ struct GitHubUserItem: Decodable {
     let avatar_url: String?
     let html_url: String
 }
+
+
