@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -28,6 +29,9 @@ class ViewController: UIViewController, UITableViewDataSource {
             self.tableUsers.reloadData()
         }
         
+        // Search Topic with SwiftyJson
+        self.jsonSwiftyJson()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,10 +46,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.following.text = "Following: 0"
         
         let imgUrl = URL(string: (result?.items![indexPath.row].avatar_url)!)
-        let queueLoadImg = DispatchQueue(label: "load_img")
+
         cell.avatar.boTronHinh()
         cell.avatar.image = UIImage(named: "non-avatar")
-        
+//        let queueLoadImg = DispatchQueue(label: "load_img")
 //        queueLoadImg.async {
 //            // DATA
 //            do {
@@ -78,7 +82,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     func handle(_ result: Result<RetrieveImageResult, KingfisherError>) {
         switch result {
         case .success(let retrieveImageResult):
-            print("sucess")
             let image = retrieveImageResult.image
             let cacheType = retrieveImageResult.cacheType
             let source = retrieveImageResult.source
@@ -96,7 +99,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 Original source:
                 \(originalSource)
             """
-            print(message)
+            // print(message)
         case.failure(let kingfisherError):
             print(kingfisherError)
         }
@@ -113,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let password = "password"
         let credential = URLCredential(user: user, password: password, persistence: .forSession)
 
-        AF.request("http://api.github.com/search/users?q=\(textSearch)")
+        AF.request("https://api.github.com/search/users?q=\(textSearch)")
             .authenticate(with: credential)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -164,6 +167,40 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
     }
+    
+    func jsonSwiftyJson() {
+        let user = "user"
+        let password = "password"
+        let credential = URLCredential(user: user, password: password, persistence: .forSession)
+
+        AF.request("https://api.github.com/search/issues?q=windows+label:bug+language:python+state:open&sort=created&order=asc")
+            .authenticate(with: credential)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+            // debugPrint(response)
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    let jsonData = try JSON(data: data)
+                    // print(jsonData)
+                    let total_count = jsonData["total_count"].intValue
+                    print("total_count: \(total_count)")
+                    let user_1_login = jsonData["items"][0]["user"]["login"]
+                    print(user_1_login)
+                    for (key,subJson):(String, JSON) in jsonData["items"] {
+                        print("#oder: \(key) - user: \(subJson["user"]["login"]) - avarta_url \(subJson["user"]["avatar_url"])")
+                    }
+                } catch (let errSwiftyJson) {
+                    print(errSwiftyJson)
+                }
+                
+            }
+        }
+    }
+    
 }
 
 struct GitHubUser: Decodable {
