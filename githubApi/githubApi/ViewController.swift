@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // self.alamofireRequest()
         self.tableUsers.dataSource = self
         
-        self.alamofireRequestJson { (result, error) in
+        self.alamofireRequestJson(textSearch: "andre") { (result, error) in
             // print(result,error)
 
             self.result = result as? GitHubUser
@@ -68,12 +68,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func alamofireRequestJson (completionHandler: @escaping (_ result: Any?, _ error: Any?) -> ()) {
+    func alamofireRequestJson (textSearch:String, completionHandler: @escaping (_ result: Any?, _ error: Any?) -> ()) {
         let user = "user"
         let password = "password"
         let credential = URLCredential(user: user, password: password, persistence: .forSession)
 
-        AF.request("http://api.github.com/search/users?q=andre")
+        AF.request("http://api.github.com/search/users?q=\(textSearch)")
             .authenticate(with: credential)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -97,6 +97,33 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
 
+    @IBOutlet weak var input: UITextField!
+    @IBAction func searchAction(_ sender: Any) {
+        guard let text = input.text else {
+            return
+        }
+        
+        print(text)
+        self.alamofireRequestJson(textSearch: text) { (result, error) in
+            // print(result,error)
+            if error != nil {
+                let alert = UIAlertController(title: "Invalid Input", message: "Search rồi mà đéo có ^^", preferredStyle: .alert)
+                    
+                     let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+                     })
+                     alert.addAction(ok)
+                     let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                     })
+                     alert.addAction(cancel)
+                     DispatchQueue.main.async(execute: {
+                        self.present(alert, animated: true)
+                })
+            }
+            self.result = result as? GitHubUser
+            self.tableUsers.reloadData()
+        }
+        
+    }
 }
 
 struct GitHubUser: Decodable {
