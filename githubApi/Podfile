@@ -10,5 +10,6 @@ target 'githubApi' do
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod "KRProgressHUD"
+  pod 'Toast-Swift', '~> 5.0.1'
 
 end

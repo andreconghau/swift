@@ -10,6 +10,7 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 import KRProgressHUD
+import Toast_Swift
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.makeToast("Hi! please type username", duration: 3.0, position: .top)
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             self.tableUsers.refreshControl = refreshControl
@@ -214,7 +216,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         if (input.text != nil && input.hasText && input.text != "") {
             text = String(input.text!)
         }
-        
+        // create a new style
+        var style = ToastStyle()
+        // this is just one of many style options
+        style.messageColor = .blue
+        // present the toast with the new style
+        self.view.makeToast("Hi! we are searching with \(text)", duration: 3.0, position: .bottom, style: style)
+
         print(text)
         self.alamofireRequestJson(textSearch: text) { (result, error) in
             // print(result,error)
