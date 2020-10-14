@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import KRProgressHUD
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -169,6 +170,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         print(text)
+        KRProgressHUD.show(withMessage: "Loadding")
         self.alamofireRequestJson(textSearch: text) { (result, error) in
             // print(result,error)
             if error != nil {
@@ -184,10 +186,25 @@ class ViewController: UIViewController, UITableViewDataSource {
                         self.present(alert, animated: true)
                 })
             }
-            self.result = result as? GitHubUser
-            self.tableUsers.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
-            self.tableUsers.reloadData()
+            if (result != nil) {
+                self.result = result as? GitHubUser
+                self.tableUsers.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+                self.tableUsers.reloadData()
+            } else {
+                let alert = UIAlertController(title: "Not Result", message: "Search rồi mà đéo có ^^", preferredStyle: .alert)
+                    
+                     let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+                     })
+                     alert.addAction(ok)
+                     let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                     })
+                     alert.addAction(cancel)
+                     DispatchQueue.main.async(execute: {
+                        self.present(alert, animated: true)
+                })
+            }
             
+            KRProgressHUD.dismiss()
         }
         
     }
