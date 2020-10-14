@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -44,22 +45,61 @@ class ViewController: UIViewController, UITableViewDataSource {
         let queueLoadImg = DispatchQueue(label: "load_img")
         cell.avatar.boTronHinh()
         cell.avatar.image = UIImage(named: "non-avatar")
-        queueLoadImg.async {
-            // DATA
-            do {
-                    let imgData = try Data(contentsOf: imgUrl!)
-                    // Render
-                DispatchQueue.main.async {
-                    cell.avatar.image = UIImage(data: imgData)
-                }
-       
-            } catch {
-                // cell.avatar.image = UIImage(named: "non-avatar.png")
-            }
-            
+        
+//        queueLoadImg.async {
+//            // DATA
+//            do {
+//                    let imgData = try Data(contentsOf: imgUrl!)
+//                    // Render
+//                DispatchQueue.main.async {
+//                    cell.avatar.image = UIImage(data: imgData)
+//                }
+//
+//            } catch {
+//                // cell.avatar.image = UIImage(named: "non-avatar.png")
+//            }
+//        }
+        
+        // Apply KingFisher
+        let resource = ImageResource(downloadURL: imgUrl!)
+        let placeholder = UIImage(named: "non-avatar")
+        let processor = RoundCornerImageProcessor(cornerRadius: 20)
+        
+        cell.avatar.kf.setImage(with: resource, placeholder: placeholder, options: [.processor(processor)], progressBlock: { receivedSize, totalSize in
+                                    let percentage = (Float(receivedSize) / Float(totalSize)) * 100.0
+                                    print("downloading progress: \(percentage)%")
+        }) { (result) in
+            self.handle(result)
         }
         
         return cell
+    }
+    
+    func handle(_ result: Result<RetrieveImageResult, KingfisherError>) {
+        switch result {
+        case .success(let retrieveImageResult):
+            print("sucess")
+            let image = retrieveImageResult.image
+            let cacheType = retrieveImageResult.cacheType
+            let source = retrieveImageResult.source
+            let originalSource = retrieveImageResult.originalSource
+            let message = """
+                Image Size:
+                \(image.size)
+
+                Cache:
+                \(cacheType)
+
+                Source:
+                \(source)
+
+                Original source:
+                \(originalSource)
+            """
+            print(message)
+        case.failure(let kingfisherError):
+            print(kingfisherError)
+        }
     }
     
     func alamofireRequest () {
