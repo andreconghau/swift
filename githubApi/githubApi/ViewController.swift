@@ -13,11 +13,29 @@ import SwiftyJSON
 class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableUsers: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
     var result:GitHubUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            self.tableUsers.refreshControl = refreshControl
+        } else {
+            self.tableUsers.addSubview(refreshControl)
+        }
+        // Setup Refresh Control
+        self.refreshControl.addTarget(self, action: #selector(updateData), for: .valueChanged)
+        // Customizing Refresh Control
+        self.refreshControl.tintColor = UIColor.blue
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Đang tải...", attributes: attributes)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+
+        
         // Do any additional setup after loading the view.
         // self.alamofireRequest()
         self.tableUsers.dataSource = self
@@ -32,6 +50,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Search Topic with SwiftyJson
         self.jsonSwiftyJson()
         
+    }
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,9 +185,39 @@ class ViewController: UIViewController, UITableViewDataSource {
                 })
             }
             self.result = result as? GitHubUser
+            self.tableUsers.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
             self.tableUsers.reloadData()
+            
         }
         
+    }
+    
+    @objc private func updateData() {
+        var text:String = "andre"
+        if (input.text != nil && input.hasText && input.text != "") {
+            text = String(input.text!)
+        }
+        
+        print(text)
+        self.alamofireRequestJson(textSearch: text) { (result, error) in
+            // print(result,error)
+            if error != nil {
+                let alert = UIAlertController(title: "Invalid Input", message: "Search rồi mà đéo có ^^", preferredStyle: .alert)
+                    
+                     let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+                     })
+                     alert.addAction(ok)
+                     let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                     })
+                     alert.addAction(cancel)
+                     DispatchQueue.main.async(execute: {
+                        self.present(alert, animated: true)
+                })
+            }
+            self.result = result as? GitHubUser
+            self.tableUsers.reloadData()
+        }
+        self.refreshControl.endRefreshing()
     }
     
     func jsonSwiftyJson() {
