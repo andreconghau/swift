@@ -11,8 +11,9 @@ import Kingfisher
 import SwiftyJSON
 import KRProgressHUD
 import Toast_Swift
+import SafariServices
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableUsers: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.makeToast("Hi! please type username", duration: 3.0, position: .top)
+        self.view.makeToast("Hi! please type username", duration: 3.0, position: .center)
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             self.tableUsers.refreshControl = refreshControl
@@ -34,14 +35,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         self.refreshControl.attributedTitle = NSAttributedString(string: "Đang tải...", attributes: attributes)
         
+        /*
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        */
         
 
         
         // Do any additional setup after loading the view.
         // self.alamofireRequest()
-        self.tableUsers.dataSource = self
+        tableUsers.dataSource = self
+        tableUsers.delegate = self
         
         self.alamofireRequestJson(textSearch: "andre") { (result, error) in
             // print(result,error)
@@ -51,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         // Search Topic with SwiftyJson
-        self.jsonSwiftyJson()
+        // self.jsonSwiftyJson()
         
     }
     
@@ -61,6 +65,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.result?.items?.count ?? 0
+    }
+    
+    func showTutorial(_ url: String) {
+        if let url = URL(string: url) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        showTutorial((result?.items![indexPath.row].html_url)!)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -277,7 +295,20 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
         }
     }
-    
+ 
+}
+
+extension UIViewController {
+
+    public func hideKeyboarOnTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardAction))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+
+    @objc private func hideKeyboardAction() {
+        self.view.endEditing(true)
+    }
 }
 
 struct GitHubUser: Decodable {

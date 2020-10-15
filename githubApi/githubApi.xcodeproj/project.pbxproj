@@ -16,6 +16,7 @@
 		6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */; };
 		6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C593D937DFAD94C35B063 /* Pods_githubApi.framework */; };
 		6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D92535ACF300F9E6F1 /* UIImageView.swift */; };
+		65DFD995253717CA00791F34 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DFD994253717CA00791F34 /* SafariServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		6587F5C62535895400F9E6F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		6587F5D92535ACF300F9E6F1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		65DFD994253717CA00791F34 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		961C593D937DFAD94C35B063 /* Pods_githubApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A578075C81426D0248445919 /* Pods-githubApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.release.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.release.xcconfig"; sourceTree = "<group>"; };
 		E9876E10D118E1726B36C331 /* Pods-githubApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.debug.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DFD995253717CA00791F34 /* SafariServices.framework in Frameworks */,
 				6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +103,7 @@
 		9A2A8F41A0B0D4F95889E45C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65DFD994253717CA00791F34 /* SafariServices.framework */,
 				961C593D937DFAD94C35B063 /* Pods_githubApi.framework */,
 			);
 			name = Frameworks;
