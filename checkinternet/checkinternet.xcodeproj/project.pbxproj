@@ -3,106 +3,91 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5B82535895200F9E6F1 /* AppDelegate.swift */; };
-		6587F5BB2535895200F9E6F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */; };
-		6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BC2535895200F9E6F1 /* ViewController.swift */; };
-		6587F5C02535895200F9E6F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6587F5BE2535895200F9E6F1 /* Main.storyboard */; };
-		6587F5C22535895400F9E6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6587F5C12535895400F9E6F1 /* Assets.xcassets */; };
-		6587F5C52535895400F9E6F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6587F5C32535895400F9E6F1 /* LaunchScreen.storyboard */; };
-		6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */; };
-		6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961C593D937DFAD94C35B063 /* Pods_githubApi.framework */; };
-		6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5D92535ACF300F9E6F1 /* UIImageView.swift */; };
+		1AB2C5A825FF21DEC3509D64 /* Pods_checkinternet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F558FF5BF2B7577F05F950 /* Pods_checkinternet.framework */; };
+		65F6187D25380DF00069E5A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6187C25380DF00069E5A1 /* AppDelegate.swift */; };
+		65F6187F25380DF00069E5A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6187E25380DF00069E5A1 /* SceneDelegate.swift */; };
+		65F6188125380DF00069E5A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6188025380DF00069E5A1 /* ViewController.swift */; };
+		65F6188425380DF00069E5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F6188225380DF00069E5A1 /* Main.storyboard */; };
+		65F6188625380DF30069E5A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F6188525380DF30069E5A1 /* Assets.xcassets */; };
+		65F6188925380DF30069E5A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F6188725380DF30069E5A1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6587F5B52535895200F9E6F1 /* githubApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6587F5B82535895200F9E6F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6587F5BC2535895200F9E6F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6587F5BF2535895200F9E6F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6587F5C12535895400F9E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6587F5C42535895400F9E6F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6587F5C62535895400F9E6F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		6587F5D92535ACF300F9E6F1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		65DFD994253717CA00791F34 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		961C593D937DFAD94C35B063 /* Pods_githubApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A578075C81426D0248445919 /* Pods-githubApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.release.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.release.xcconfig"; sourceTree = "<group>"; };
-		E9876E10D118E1726B36C331 /* Pods-githubApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubApi.debug.xcconfig"; path = "Target Support Files/Pods-githubApi/Pods-githubApi.debug.xcconfig"; sourceTree = "<group>"; };
+		64F558FF5BF2B7577F05F950 /* Pods_checkinternet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_checkinternet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F6187925380DF00069E5A1 /* checkinternet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = checkinternet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F6187C25380DF00069E5A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65F6187E25380DF00069E5A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		65F6188025380DF00069E5A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65F6188325380DF00069E5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65F6188525380DF30069E5A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65F6188825380DF30069E5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65F6188A25380DF30069E5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		785ECFEEE425048B188AA80F /* Pods-checkinternet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-checkinternet.debug.xcconfig"; path = "Target Support Files/Pods-checkinternet/Pods-checkinternet.debug.xcconfig"; sourceTree = "<group>"; };
+		A4971314FCBECD9B135D07E8 /* Pods-checkinternet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-checkinternet.release.xcconfig"; path = "Target Support Files/Pods-checkinternet/Pods-checkinternet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6587F5B22535895200F9E6F1 /* Frameworks */ = {
+		65F6187625380DF00069E5A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6587F5D32535AC0D00F9E6F1 /* Pods_githubApi.framework in Frameworks */,
+				1AB2C5A825FF21DEC3509D64 /* Pods_checkinternet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08613507D130579E20BF54DB /* Pods */ = {
+		65F6187025380DF00069E5A1 = {
 			isa = PBXGroup;
 			children = (
-				E9876E10D118E1726B36C331 /* Pods-githubApi.debug.xcconfig */,
-				A578075C81426D0248445919 /* Pods-githubApi.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		6587F5AC2535895200F9E6F1 = {
-			isa = PBXGroup;
-			children = (
-				6587F5B72535895200F9E6F1 /* githubApi */,
-				6587F5B62535895200F9E6F1 /* Products */,
-				08613507D130579E20BF54DB /* Pods */,
-				9A2A8F41A0B0D4F95889E45C /* Frameworks */,
+				65F6187B25380DF00069E5A1 /* checkinternet */,
+				65F6187A25380DF00069E5A1 /* Products */,
+				79A7CBFB569C755062ADFD54 /* Pods */,
+				BDEA8B5900DA945061BEDBE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6587F5B62535895200F9E6F1 /* Products */ = {
+		65F6187A25380DF00069E5A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6587F5B52535895200F9E6F1 /* githubApi.app */,
+				65F6187925380DF00069E5A1 /* checkinternet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6587F5B72535895200F9E6F1 /* githubApi */ = {
+		65F6187B25380DF00069E5A1 /* checkinternet */ = {
 			isa = PBXGroup;
 			children = (
-				6587F5D82535ACDE00F9E6F1 /* extension */,
-				6587F5B82535895200F9E6F1 /* AppDelegate.swift */,
-				6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */,
-				6587F5BC2535895200F9E6F1 /* ViewController.swift */,
-				6587F5BE2535895200F9E6F1 /* Main.storyboard */,
-				6587F5C12535895400F9E6F1 /* Assets.xcassets */,
-				6587F5C32535895400F9E6F1 /* LaunchScreen.storyboard */,
-				6587F5C62535895400F9E6F1 /* Info.plist */,
-				6587F5D025359FFE00F9E6F1 /* UserTableViewCell.swift */,
+				65F6187C25380DF00069E5A1 /* AppDelegate.swift */,
+				65F6187E25380DF00069E5A1 /* SceneDelegate.swift */,
+				65F6188025380DF00069E5A1 /* ViewController.swift */,
+				65F6188225380DF00069E5A1 /* Main.storyboard */,
+				65F6188525380DF30069E5A1 /* Assets.xcassets */,
+				65F6188725380DF30069E5A1 /* LaunchScreen.storyboard */,
+				65F6188A25380DF30069E5A1 /* Info.plist */,
 			);
-			path = githubApi;
+			path = checkinternet;
 			sourceTree = "<group>";
 		};
-		6587F5D82535ACDE00F9E6F1 /* extension */ = {
+		79A7CBFB569C755062ADFD54 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6587F5D92535ACF300F9E6F1 /* UIImageView.swift */,
+				785ECFEEE425048B188AA80F /* Pods-checkinternet.debug.xcconfig */,
+				A4971314FCBECD9B135D07E8 /* Pods-checkinternet.release.xcconfig */,
 			);
-			path = extension;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		9A2A8F41A0B0D4F95889E45C /* Frameworks */ = {
+		BDEA8B5900DA945061BEDBE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65DFD994253717CA00791F34 /* SafariServices.framework */,
-				961C593D937DFAD94C35B063 /* Pods_githubApi.framework */,
+				64F558FF5BF2B7577F05F950 /* Pods_checkinternet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,40 +95,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6587F5B42535895200F9E6F1 /* githubApi */ = {
+		65F6187825380DF00069E5A1 /* checkinternet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6587F5C92535895400F9E6F1 /* Build configuration list for PBXNativeTarget "githubApi" */;
+			buildConfigurationList = 65F6188D25380DF30069E5A1 /* Build configuration list for PBXNativeTarget "checkinternet" */;
 			buildPhases = (
-				990EF2BF95941A19AE24686C /* [CP] Check Pods Manifest.lock */,
-				6587F5B12535895200F9E6F1 /* Sources */,
-				6587F5B22535895200F9E6F1 /* Frameworks */,
-				6587F5B32535895200F9E6F1 /* Resources */,
-				687A126099D1A4937B28C679 /* [CP] Embed Pods Frameworks */,
+				50FE54E261AA606F8601244D /* [CP] Check Pods Manifest.lock */,
+				65F6187525380DF00069E5A1 /* Sources */,
+				65F6187625380DF00069E5A1 /* Frameworks */,
+				65F6187725380DF00069E5A1 /* Resources */,
+				3D9B031508378C5639BD56AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = githubApi;
-			productName = githubApi;
-			productReference = 6587F5B52535895200F9E6F1 /* githubApi.app */;
+			name = checkinternet;
+			productName = checkinternet;
+			productReference = 65F6187925380DF00069E5A1 /* checkinternet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6587F5AD2535895200F9E6F1 /* Project object */ = {
+		65F6187125380DF00069E5A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					6587F5B42535895200F9E6F1 = {
+					65F6187825380DF00069E5A1 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 6587F5B02535895200F9E6F1 /* Build configuration list for PBXProject "githubApi" */;
+			buildConfigurationList = 65F6187425380DF00069E5A1 /* Build configuration list for PBXProject "checkinternet" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,48 +136,48 @@
 				en,
 				Base,
 			);
-			mainGroup = 6587F5AC2535895200F9E6F1;
-			productRefGroup = 6587F5B62535895200F9E6F1 /* Products */;
+			mainGroup = 65F6187025380DF00069E5A1;
+			productRefGroup = 65F6187A25380DF00069E5A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6587F5B42535895200F9E6F1 /* githubApi */,
+				65F6187825380DF00069E5A1 /* checkinternet */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6587F5B32535895200F9E6F1 /* Resources */ = {
+		65F6187725380DF00069E5A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6587F5C52535895400F9E6F1 /* LaunchScreen.storyboard in Resources */,
-				6587F5C22535895400F9E6F1 /* Assets.xcassets in Resources */,
-				6587F5C02535895200F9E6F1 /* Main.storyboard in Resources */,
+				65F6188925380DF30069E5A1 /* LaunchScreen.storyboard in Resources */,
+				65F6188625380DF30069E5A1 /* Assets.xcassets in Resources */,
+				65F6188425380DF00069E5A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		687A126099D1A4937B28C679 /* [CP] Embed Pods Frameworks */ = {
+		3D9B031508378C5639BD56AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-githubApi/Pods-githubApi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-checkinternet/Pods-checkinternet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-githubApi/Pods-githubApi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-checkinternet/Pods-checkinternet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-githubApi/Pods-githubApi-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-checkinternet/Pods-checkinternet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		990EF2BF95941A19AE24686C /* [CP] Check Pods Manifest.lock */ = {
+		50FE54E261AA606F8601244D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,7 +192,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-githubApi-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-checkinternet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -217,33 +202,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6587F5B12535895200F9E6F1 /* Sources */ = {
+		65F6187525380DF00069E5A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */,
-				6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */,
-				6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */,
-				6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */,
-				6587F5BB2535895200F9E6F1 /* SceneDelegate.swift in Sources */,
+				65F6188125380DF00069E5A1 /* ViewController.swift in Sources */,
+				65F6187D25380DF00069E5A1 /* AppDelegate.swift in Sources */,
+				65F6187F25380DF00069E5A1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6587F5BE2535895200F9E6F1 /* Main.storyboard */ = {
+		65F6188225380DF00069E5A1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6587F5BF2535895200F9E6F1 /* Base */,
+				65F6188325380DF00069E5A1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6587F5C32535895400F9E6F1 /* LaunchScreen.storyboard */ = {
+		65F6188725380DF30069E5A1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6587F5C42535895400F9E6F1 /* Base */,
+				65F6188825380DF30069E5A1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -251,7 +234,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6587F5C72535895400F9E6F1 /* Debug */ = {
+		65F6188B25380DF30069E5A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -312,7 +295,7 @@
 			};
 			name = Debug;
 		};
-		6587F5C82535895400F9E6F1 /* Release */ = {
+		65F6188C25380DF30069E5A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,40 +350,40 @@
 			};
 			name = Release;
 		};
-		6587F5CA2535895400F9E6F1 /* Debug */ = {
+		65F6188E25380DF30069E5A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9876E10D118E1726B36C331 /* Pods-githubApi.debug.xcconfig */;
+			baseConfigurationReference = 785ECFEEE425048B188AA80F /* Pods-checkinternet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UVAYZ8Z2W;
-				INFOPLIST_FILE = githubApi/Info.plist;
+				INFOPLIST_FILE = checkinternet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githuapi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andre.checkinternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6587F5CB2535895400F9E6F1 /* Release */ = {
+		65F6188F25380DF30069E5A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A578075C81426D0248445919 /* Pods-githubApi.release.xcconfig */;
+			baseConfigurationReference = A4971314FCBECD9B135D07E8 /* Pods-checkinternet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UVAYZ8Z2W;
-				INFOPLIST_FILE = githubApi/Info.plist;
+				INFOPLIST_FILE = checkinternet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andre.githuapi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andre.checkinternet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,25 +393,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6587F5B02535895200F9E6F1 /* Build configuration list for PBXProject "githubApi" */ = {
+		65F6187425380DF00069E5A1 /* Build configuration list for PBXProject "checkinternet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6587F5C72535895400F9E6F1 /* Debug */,
-				6587F5C82535895400F9E6F1 /* Release */,
+				65F6188B25380DF30069E5A1 /* Debug */,
+				65F6188C25380DF30069E5A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6587F5C92535895400F9E6F1 /* Build configuration list for PBXNativeTarget "githubApi" */ = {
+		65F6188D25380DF30069E5A1 /* Build configuration list for PBXNativeTarget "checkinternet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6587F5CA2535895400F9E6F1 /* Debug */,
-				6587F5CB2535895400F9E6F1 /* Release */,
+				65F6188E25380DF30069E5A1 /* Debug */,
+				65F6188F25380DF30069E5A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6587F5AD2535895200F9E6F1 /* Project object */;
+	rootObject = 65F6187125380DF00069E5A1 /* Project object */;
 }
