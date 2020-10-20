@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653F5AB42539984F0028E8BC /* UserGitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F5AB32539984F0028E8BC /* UserGitHub.swift */; };
 		6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5B82535895200F9E6F1 /* AppDelegate.swift */; };
 		6587F5BB2535895200F9E6F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */; };
 		6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587F5BC2535895200F9E6F1 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653F5AB32539984F0028E8BC /* UserGitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGitHub.swift; sourceTree = "<group>"; };
 		6587F5B52535895200F9E6F1 /* githubApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6587F5B82535895200F9E6F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		653F5AB2253998050028E8BC /* realm */ = {
+			isa = PBXGroup;
+			children = (
+				653F5AB32539984F0028E8BC /* UserGitHub.swift */,
+			);
+			path = realm;
+			sourceTree = "<group>";
+		};
 		6587F5AC2535895200F9E6F1 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		6587F5B72535895200F9E6F1 /* githubApi */ = {
 			isa = PBXGroup;
 			children = (
+				653F5AB2253998050028E8BC /* realm */,
 				6587F5D82535ACDE00F9E6F1 /* extension */,
 				6587F5B82535895200F9E6F1 /* AppDelegate.swift */,
 				6587F5BA2535895200F9E6F1 /* SceneDelegate.swift */,
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6587F5D125359FFE00F9E6F1 /* UserTableViewCell.swift in Sources */,
+				653F5AB42539984F0028E8BC /* UserGitHub.swift in Sources */,
 				6587F5DA2535ACF300F9E6F1 /* UIImageView.swift in Sources */,
 				6587F5BD2535895200F9E6F1 /* ViewController.swift in Sources */,
 				6587F5B92535895200F9E6F1 /* AppDelegate.swift in Sources */,

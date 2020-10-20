@@ -3,9 +3,14 @@ PODS:
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
-  - KRActivityIndicatorView (3.0.6)
-  - KRProgressHUD (3.4.6):
-    - KRActivityIndicatorView (= 3.0.6)
+  - KRActivityIndicatorView (3.0.7)
+  - KRProgressHUD (3.4.7):
+    - KRActivityIndicatorView (= 3.0.7)
+  - Realm (5.5.0):
+    - Realm/Headers (= 5.5.0)
+  - Realm/Headers (5.5.0)
+  - RealmSwift (5.5.0):
+    - Realm (= 5.5.0)
   - SwiftyJSON (4.3.0)
   - Toast-Swift (5.0.1)
 
@@ -13,6 +18,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Kingfisher (~> 5.0)
   - KRProgressHUD
+  - RealmSwift
   - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 5.0.1)
 
@@ -22,17 +28,21 @@ SPEC REPOS:
     - Kingfisher
     - KRActivityIndicatorView
     - KRProgressHUD
+    - Realm
+    - RealmSwift
     - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
-  KRActivityIndicatorView: efaa076d1f800c4511b324ae86df8feebcd76323
-  KRProgressHUD: 78d3c810269f8912f9d20c36b5702694ffba1645
+  KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
+  KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  Realm: fb399d76f44042e5cdfc630f33828fdb4d077345
+  RealmSwift: 3b7e62356207ef16d34de4e55d475163bd2062bb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: a4e9abb01b730258748952718bf06b38f565c8ae
+PODFILE CHECKSUM: a3bbe201f724f137289095680dcdc7662191c7ab
 
 COCOAPODS: 1.9.3
